@@ -1,3 +1,3 @@
-const main = require('./lib/Pomodorizr')
+const Pomodorizr = require('./lib/Pomodorizr')
 
-module.exports = main
+module.exports = (config) => new Pomodorizr(config)
