@@ -90,4 +90,25 @@ describe('Pomodorizr', () => {
       pomodorized.numberOfBreaks.should.equal(3)
     })
   })
+
+  describe('# Non defaults values', () => {
+    let pomodorized
+    beforeEach(() => {
+      pomodorized = new Pomodorizr({ tomatoDuration: 100 })
+    })
+
+    it('Should not change defaults', () => {
+      pomodorized.longBreakDuration.should.equal(15)
+      pomodorized.shortBreakDuration.should.equal(5)
+      pomodorized.longBreakDuration.should.equal(15)
+      pomodorized.dimention.should.equal('minutes')
+      pomodorized.tomatos.should.equal(0)
+      pomodorized.numberOfBreaks.should.equal(0)
+      pomodorized.ununfinishedTomatos.should.equal(0)
+    })
+
+    it('Should set custom tomato duration', () => {
+      pomodorized.tomatoDuration.should.equal(100)
+    })
+  })
 })
